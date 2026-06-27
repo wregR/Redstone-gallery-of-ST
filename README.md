@@ -1,3 +1,11 @@
+## Live Demo / 在线访问
+
+Visit the website here:
+
+在线访问：
+
+https://redstone-gallery.netlify.app
+
 # Redstone Gallery
 
 一个 Minecraft 像素风红石作品档案馆，用于分类展示红石机器作品，支持作品图片、文字介绍、详情页、下载链接，以及基于 Netlify 的后台上传和内容管理。
