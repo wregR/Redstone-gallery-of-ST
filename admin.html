@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>红石作品仓库 - 管理后台</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="返回作品仓库">
+        <span class="brand-block"></span>
+        <span>
+          <strong>馆长后台</strong>
+          <small>Redstone Archive Admin</small>
+        </span>
+      </a>
+      <a class="back-link admin-top-link" href="./index.html">返回前台</a>
+    </header>
+
+    <main class="admin-shell">
+      <section id="loginPanel" class="admin-login">
+        <h1>管理员登录</h1>
+        <p>输入 Netlify 环境变量中配置的管理口令，之后就可以上传作品图片和文件。</p>
+        <label>
+          管理口令
+          <input id="tokenInput" type="password" autocomplete="current-password" />
+        </label>
+        <button id="loginButton" class="admin-button">进入后台</button>
+        <p id="loginMessage" class="admin-message"></p>
+      </section>
+
+      <section id="adminPanel" class="admin-grid" hidden>
+        <aside class="admin-list-panel">
+          <div class="admin-head">
+            <div>
+              <p class="crumb">作品列表</p>
+              <h2>档案条目</h2>
+            </div>
+            <button id="newButton" class="admin-button small">新建</button>
+          </div>
+          <div id="workList" class="admin-work-list"></div>
+        </aside>
+
+        <section class="admin-editor">
+          <div class="admin-head">
+            <div>
+              <p class="crumb">编辑作品</p>
+              <h2 id="editorTitle">新建作品</h2>
+            </div>
+            <button id="deleteButton" class="admin-button danger small" type="button">删除</button>
+          </div>
+
+          <form id="workForm" class="work-form">
+            <input id="workId" type="hidden" />
+            <label>
+              作品标题
+              <input id="title" required placeholder="例如：16速分类打包机 A1" />
+            </label>
+            <label>
+              分类
+              <select id="category"></select>
+            </label>
+            <label>
+              标签
+              <input id="tags" placeholder="用逗号分隔，例如：16速, 可堆叠, 箱盒输出" />
+            </label>
+            <label>
+              卡片简介
+              <textarea id="summary" rows="2" placeholder="列表卡片里显示的一句话"></textarea>
+            </label>
+            <label>
+              详情介绍
+              <textarea id="intro" rows="5" placeholder="作品详情页里的完整说明"></textarea>
+            </label>
+            <label>
+              参数
+              <input id="stats" placeholder="用逗号分隔，例如：体积 11x8x7, 版本 1.20+, 速率 16x" />
+            </label>
+
+            <div class="upload-row">
+              <label>
+                封面图
+                <input id="imageFile" type="file" accept="image/*" />
+              </label>
+              <button id="uploadImageButton" class="admin-button small" type="button">上传封面</button>
+            </div>
+            <div id="imagesProgress" class="upload-progress" hidden>
+              <span id="imagesProgressFill"></span>
+              <strong id="imagesProgressText"></strong>
+            </div>
+            <input id="image" placeholder="封面图地址会自动填入，也可以手动粘贴" />
+
+            <div class="upload-row">
+              <label>
+                下载文件
+                <input id="downloadFile" type="file" />
+              </label>
+              <button id="uploadDownloadButton" class="admin-button small" type="button">上传文件</button>
+            </div>
+            <div id="downloadsProgress" class="upload-progress" hidden>
+              <span id="downloadsProgressFill"></span>
+              <strong id="downloadsProgressText"></strong>
+            </div>
+            <input id="download" placeholder="下载地址会自动填入，也可以手动粘贴" />
+
+            <button class="admin-button save" type="submit">保存作品</button>
+            <p id="formMessage" class="admin-message"></p>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

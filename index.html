@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>红石作品仓库</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#/" aria-label="返回全部作品">
+        <span class="brand-block"></span>
+        <span>
+          <strong>红石作品仓库</strong>
+          <small>Redstone Builds</small>
+        </span>
+      </a>
+      <div class="search-wrap">
+        <span class="search-icon" aria-hidden="true"></span>
+        <input id="searchInput" type="search" placeholder="搜索作品、标签、功能..." autocomplete="off" />
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-scene" aria-hidden="true">
+          <span class="pixel sun"></span>
+          <span class="pixel torch torch-a"></span>
+          <span class="pixel torch torch-b"></span>
+          <span class="rail rail-a"></span>
+          <span class="rail rail-b"></span>
+          <span class="redstone-line line-a"></span>
+          <span class="redstone-line line-b"></span>
+          <span class="machine-core"></span>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Minecraft Redstone Collection</p>
+          <h1>红石作品仓库</h1>
+          <p>按机器类型整理图片、简介和下载入口，方便玩家快速找到分类、打包、矿车、编码和自动合成相关作品。</p>
+        </div>
+      </section>
+
+      <section class="layout">
+        <aside class="sidebar" aria-label="作品分类">
+          <div class="sidebar-title">分类标签</div>
+          <nav id="categoryNav" class="category-list"></nav>
+        </aside>
+
+        <section class="content-panel">
+          <div id="listView">
+            <div class="section-head">
+              <div>
+                <p id="crumb" class="crumb">全部作品</p>
+                <h2 id="pageTitle">全部红石作品</h2>
+              </div>
+              <span id="resultCount" class="count-badge"></span>
+            </div>
+            <div id="gallery" class="gallery"></div>
+          </div>
+
+          <article id="detailView" class="detail" hidden></article>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <span>把真实图片放进 assets 文件夹后，在 app.js 里替换 image 字段即可。</span>
+      <a class="admin-footer-link" href="./admin.html">馆长后台</a>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
